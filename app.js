@@ -10,20 +10,25 @@ console.log(inter+"1er");
 for (i=0;i<4;i++){
 	if (inter!="1") {
 		inter = setInterval(function(){
+			sec--
 			if (sec===00 + pauseDone) {
-				sec=60
+				sec=59
+				min=25
 				min--
 				pauseDone = false;
 			}
 
-			sec--
-			$("#sec").html(sec);
-			console.log(sec);
+			if (sec===00) {
+				min--
+			}
+
+			//$("#sec").html(sec);
+			//console.log(sec);
 
 			if (min + sec ===00 && !pauseDone){
 			alert("pause")
 				min=00;
-				sec=10;
+				sec=4;
 				pauseDone = true;
 			};
 
